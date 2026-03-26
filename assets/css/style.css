@@ -3,6 +3,10 @@
 /* 
 Base style 
 */
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Noto Sans JP", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Arial", "Yu Gothic", "Meiryo", sans-serif;
     font-size: 15px;
@@ -57,7 +61,9 @@ section
 */
 .section {
     padding: 30px 15px ;
+    scroll-margin-top: 80px; /* ヘッダーの高さ分（約80px）だけ余白を作る */
 }
+
 .section-secondary {
     background-color: #efefef;
 }
@@ -74,10 +80,11 @@ section
 
 @media screen and (max-width:768px){
     .section {
-        padding: 20px 15px;
+        padding: 20px 10px;
+        justify-content: space-around;
     }
     .section-headline {
-        font-size: 20px;
+        font-size: 30px;
         margin: 0 0 20px;
     }
     .section-button {
@@ -128,6 +135,8 @@ header
 .header-navitem > a:hover {
     border-bottom: 2px solid #333;
 }
+
+
 
 @media screen and (max-width:768px){
     .header {
@@ -201,11 +210,15 @@ about
 @media screen and (max-width:768px) {
     .about {
         display: block;
+        text-align: center;
     }
 
     .about-image {
         max-width: 100%;
         margin-bottom: 20px;
+        display: block;      /* imgをブロック要素にする */
+        margin-left: auto;   /* 左余白を自動に */
+        margin-right: auto;  /* 右余白を自動に */
     }
 
     .about-headline {
@@ -236,6 +249,12 @@ feature
 .feature-description {
     text-align: left;
     margin: 0;
+}
+
+@media screen and (max-width:768px) {
+    .feature-description {
+        text-align: center;
+    }
 }
 
 /* 
